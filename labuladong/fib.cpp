@@ -8,7 +8,7 @@ int fib_one(int N) {
 	}
 	else if (N <= 0) {
 		return -1;
-	}
+	} 
 	else {
 		return (fib_one(N - 1) + fib_one(N - 2));
 	}
