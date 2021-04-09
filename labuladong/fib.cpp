@@ -2,13 +2,16 @@
 
 
 //时间复杂度达到指数级别
-int fib_one(int N) {
+long fib_one(int N) {
 	if (N == 1 || N == 2) {
 		return 1;
 	}
-	else if (N <= 0) {
+	else if (N == 0) {
+		return 0;
+	}
+	else if (N < 0) {
 		return -1;
-	} 
+	}
 	else {
 		return (fib_one(N - 1) + fib_one(N - 2));
 	}
