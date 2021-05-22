@@ -16,3 +16,4 @@ typedef Node* Tree;
 
 Tree setTree();
 int minDepth(Tree root);
+int maxDepth(Tree root);

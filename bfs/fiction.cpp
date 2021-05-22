@@ -46,3 +46,19 @@ int minDepth(Tree root) {
 
 	return depth;
 }
+
+int maxDepth(Tree root) {
+	if (root == NULL)
+		return 0;
+	else
+	{
+		int lDepth = maxDepth(root->left);
+		int rDepth = maxDepth(root->right);
+
+		/* use the larger one */
+		if (lDepth > rDepth)
+			return (lDepth + 1);
+		else
+			return (rDepth + 1);
+	}
+}
