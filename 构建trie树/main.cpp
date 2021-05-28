@@ -4,6 +4,7 @@
 int main() {
 	Trie a;
 	a.insert("hello");
-	bool b = a.search("hello");
+	a.insert("hell");
+	bool b = a.startsWith("hell");
 	cout << b << endl;
 }

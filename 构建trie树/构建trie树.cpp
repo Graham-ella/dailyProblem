@@ -2,51 +2,71 @@
 
 class Trie {
 private:
-    Trie* son[26];
-    bool isWord;
+	Trie* son[26];
+	bool isWord;
 public:
-    Trie() {
-        isWord = false;
-        for (int i = 0; i < 26; i++) son[i] = nullptr;
-    }//初始化，将孩子节点都初始化为空，标记变量isWord设置为false
+	Trie() {
+		isWord = false;
+		for (int i = 0; i < 26; i++) {
+			son[i] = nullptr;
+		}
+	}
+	~Trie() {
+		for (int i = 0; i < 26; i++) {
+			if (son[i] != nullptr) {
+				delete(son[i]);
+			}
+		}
+	}
 
-    ~Trie() {
-        for (int i = 0; i < 26; i++) {
-            if (son[i] != nullptr) delete son[i];
-        }
-    }//析构函数
+	void insert(string word) {
+		Trie* root = this;
+		for (char c : word) {
+			int cur = c - 'a';
+			if (root->son[cur] == nullptr) {
+				root->son[cur] = new Trie();
+				//创建完新节点后还是要挪下来
+				root = root->son[cur];
+			}
+			else {
+				root = root->son[cur];
+			}
+		}
+		root->isWord = true;
+	}
 
-    void insert(string word) {
-        Trie* root = this;//先找到root节点
-        for (char x : word) {
-            int cur = x - 'a';
-            if (root->son[cur] == nullptr) root->son[cur] = new Trie();//如果没有，新建一个节点
-            root = root->son[cur];
-        }
-        root->isWord = true;
-    }//如何插入一个word
+	bool search(string word) {
+		Trie* root = this;
+		for (char c : word) {
+			int cur = c - 'a';
+			if (root->son[cur] == nullptr) {
+				return false;
+			}
+			else {
+				root = root->son[cur];
+			}
+		}
+		//return true;
+		//这里写错了，应该返回isWord值，因为可能只是个前缀
+		return root->isWord;
+	}
 
-    bool search(string word) {
-        Trie* root = this;
-        for (char x : word) {
-            int cur = x - 'a';
-            if (root->son[cur] == nullptr) return false;
-            root = root->son[cur];
-        }
-        return root->isWord;
-    }
+	/** Returns if there is any word in the trie that starts with the given prefix. */
+	bool startsWith(string prefix) {
+		Trie* root = this;
+		for (char c : prefix) {
+			int cur = c - 'a';
+			if (root->son[cur] == nullptr) {
+				return false;
+			}
+			else {
+				root = root->son[cur];
+			}
+		}
+		return true;
+	}
 
-    bool startsWith(string prefix) {
-        Trie* root = this;
-        for (char x : prefix) {
-            int cur = x - 'a';
-            if (root->son[cur] == nullptr) return false;
-            root = root->son[cur];
-        }
-        return true;
-    }
 };
-
 
 //二维数组版本：
 //const int maxn = 1e5 + 50;
