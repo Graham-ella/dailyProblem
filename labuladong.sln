@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "阶乘的和", "阶乘的�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "星期几", "星期几\星期几.vcxproj", "{F3D991E3-0DE5-44CB-9B2E-9D25A0A82220}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "构建trie树", "构建trie树\构建trie树.vcxproj", "{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{F3D991E3-0DE5-44CB-9B2E-9D25A0A82220}.Release|x64.Build.0 = Release|x64
 		{F3D991E3-0DE5-44CB-9B2E-9D25A0A82220}.Release|x86.ActiveCfg = Release|Win32
 		{F3D991E3-0DE5-44CB-9B2E-9D25A0A82220}.Release|x86.Build.0 = Release|Win32
+		{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}.Debug|x64.ActiveCfg = Debug|x64
+		{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}.Debug|x64.Build.0 = Debug|x64
+		{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}.Debug|x86.ActiveCfg = Debug|Win32
+		{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}.Debug|x86.Build.0 = Debug|Win32
+		{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}.Release|x64.ActiveCfg = Release|x64
+		{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}.Release|x64.Build.0 = Release|x64
+		{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}.Release|x86.ActiveCfg = Release|Win32
+		{156B43FD-C11F-4882-A46E-E9B6B3A06FC4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
